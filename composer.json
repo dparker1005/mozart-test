@@ -1,0 +1,32 @@
+{
+    "name": "dlparker1005/mozart-test",
+    "require": {
+        "stripe/stripe-php": "*"
+	},
+	"require-dev": {
+        "coenjacobs/mozart": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Dlparker1005\\MozartTest\\": "lib/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"\"vendor/bin/mozart\" compose",
+			"composer dump-autoload"
+		],
+		"post-update-cmd": [
+			"\"vendor/bin/mozart\" compose",
+			"composer dump-autoload"
+		]
+	},
+	"extra": {
+		"mozart": {
+			"dep_namespace": "Dlparker1005\\MozartTest\\Vendor\\",
+			"dep_directory": "/lib/Vendor/",
+			"classmap_directory": "/lib/autoload/",
+			"classmap_prefix": "DLPARKER1005MT_"
+		}
+	}
+}
